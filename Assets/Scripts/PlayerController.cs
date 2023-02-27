@@ -49,5 +49,12 @@ public class PlayerController : MonoBehaviour
         dir *= Time.deltaTime;
         transform.Translate(dir * speed);
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("choque");
+        if (other.gameObject.CompareTag("PickUp")) 
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
