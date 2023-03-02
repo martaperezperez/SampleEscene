@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
 
+    private int cointCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,9 +54,15 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("choque");
-        if (other.gameObject.CompareTag("PickUp")) 
+        if (other.gameObject.CompareTag("PickUp"))
         {
+            cointCount++;
+            Debug.Log("Score: " + cointCount);
             other.gameObject.SetActive(false);
+            if (cointCount == 2)
+            {
+                speed = speed*3;
+            }
         }
     }
 }
