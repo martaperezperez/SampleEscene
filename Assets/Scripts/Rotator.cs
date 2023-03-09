@@ -7,7 +7,7 @@ public class Rotator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -15,5 +15,5 @@ public class Rotator : MonoBehaviour
     {
         transform.Rotate(new Vector3(1, 3, 4));
     }
-    
+
 }

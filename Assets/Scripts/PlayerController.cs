@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public GameObject puerta;
     public float speed = 1;
 
     private Rigidbody rb;
@@ -59,10 +61,24 @@ public class PlayerController : MonoBehaviour
             cointCount++;
             Debug.Log("Score: " + cointCount);
             other.gameObject.SetActive(false);
-            if (cointCount == 2)
+            if (cointCount == 8)
             {
                 speed = speed*3;
-            }
+            } 
+        }
+
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            puerta.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            puerta.SetActive(true);
         }
     }
 }
