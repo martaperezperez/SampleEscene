@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private float movementY;
 
     private int cointCount;
+    public TextMeshProUGUI textoFin;
 
     // Start is called before the first frame update
     void Start()
@@ -67,18 +70,30 @@ public class PlayerController : MonoBehaviour
             } 
         }
 
-    }
+        if (other.gameObject.CompareTag("Malo"))
+        {
+            transform.position = new Vector3(0, 1, 0);
+        }
 
+        if (other.gameObject.CompareTag("Fin"))
+        {
+            textoFin.gameObject.SetActive(true);
+        }
+        
+        
+
+    }
+    
+    
+ 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
             puerta.SetActive(false);
         }
-
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            puerta.SetActive(true);
-        }
     }
+    
+    
 }
+
