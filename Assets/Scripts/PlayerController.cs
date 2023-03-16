@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
             cointCount++;
             Debug.Log("Score: " + cointCount);
             other.gameObject.SetActive(false);
-            if (cointCount == 8)
+            if (cointCount == 12)
             {
                 speed = speed*3;
             } 
